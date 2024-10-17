@@ -62,43 +62,63 @@ Reflection: This process involved understanding server configuration, database m
 
 Learning Journal: Installing Joomla on Ubuntu
 Objective:
+
 Set up a Joomla website on an Ubuntu server using the LAMP stack (Linux, Apache, MySQL, PHP).
 
 Steps:
 
 System Update:
+
 Updated Ubuntu system using:
 
 bash
 sudo apt update && sudo apt upgrade
+
 LAMP Stack Installation:
 
 Apache: Installed and started Apache web server.
+
 MySQL: Installed MySQL, created a database, and user for Joomla.
+
 PHP: Installed PHP and necessary extensions for Joomla.
+
 Database Setup: Created a MySQL database and user:
 
 sql
 CREATE DATABASE joomla_db;
+
 CREATE USER 'joomla_user'@'localhost' IDENTIFIED BY 'strong_password';
+
 GRANT ALL PRIVILEGES ON joomla_db.* TO 'joomla_user'@'localhost';
+
 FLUSH PRIVILEGES;
+
 Joomla Installation: Downloaded and extracted Joomla into /var/www/html:
 
 bash
 
 sudo wget https://downloads.joomla.org/latest -O joomla.zip
+
 sudo unzip joomla.zip -d /var/www/html
+
 sudo chown -R www-data:www-data /var/www/html
+
 sudo chmod -R 755 /var/www/html
+
 Apache Configuration:
+
 Created a virtual host file for Joomla and enabled mod_rewrite for URL rewriting. Restarted Apache:
 
 bash
+
 sudo nano /etc/apache2/sites-available/joomla.conf
+
 sudo a2ensite joomla.conf
+
 sudo a2enmod rewrite
+
 sudo systemctl restart apache2
+
 Joomla Configuration: Accessed the web interface at (https://amrit-joomla.zionauto.sg/shebatha/) and followed the steps to configure Joomla, including database setup and admin account creation.
 
 Reflection: This process was similar to WordPress, with additional steps for managing Joomla’s specific file structure. The configuration required attention to Apache settings and security aspects like database permissions.
@@ -112,6 +132,7 @@ Set up a WordPress website on an Ubuntu server using the LAMP stack (Linux, Apac
 Steps:
 
 System Update:
+
 Updated Ubuntu system using:
 
 bash
@@ -119,24 +140,34 @@ sudo apt update && sudo apt upgrade
 LAMP Stack Installation:
 
 Apache: Installed and started Apache web server.
+
 MySQL: Installed MySQL and created a database and user for WordPress.
+
 PHP: Installed PHP along with necessary extensions for WordPress.
+
 Database Setup: Created a MySQL database and user:
 
 sql
 CREATE DATABASE wordpress_db;
+
 CREATE USER 'wordpress_user'@'localhost' IDENTIFIED BY 'password';
+
 GRANT ALL PRIVILEGES ON wordpress_db.* TO 'wordpress_user'@'localhost';
+
 FLUSH PRIVILEGES;
+
 WordPress Installation: Downloaded and extracted WordPress into /var/www/html. Set proper file permissions.
 
 Apache Configuration:
+
 Created a virtual host file for WordPress, enabled mod_rewrite, and restarted Apache.
 
 WordPress Configuration:
+
 Edited wp-config.php to include database credentials.
 
 Final Setup:
+
 Accessed the web interface at (https://amrit.zionauto.sg/) to complete WordPress installation.
 
 Reflection: This process involved understanding server configuration, database management, and file permissions.WordPress setup requires careful attention to system security and LAMP configuration.
