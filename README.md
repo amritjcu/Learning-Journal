@@ -38,9 +38,13 @@ Database Setup: Created a MySQL database and user:
 
 sql
 CREATE DATABASE wordpress_db;
+
 CREATE USER 'wordpress_user'@'localhost' IDENTIFIED BY 'strong_password';
+
 GRANT ALL PRIVILEGES ON wordpress_db.* TO 'wordpress_user'@'localhost';
+
 FLUSH PRIVILEGES;
+
 WordPress Installation: Downloaded and extracted WordPress into /var/www/html. Set proper file permissions.
 
 Apache Configuration:
