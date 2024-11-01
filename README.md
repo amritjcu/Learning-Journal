@@ -171,3 +171,93 @@ Final Setup:
 Accessed the web interface at (https://amrit.zionauto.sg/) to complete WordPress installation.
 
 Reflection: This process involved understanding server configuration, database management, and file permissions.WordPress setup requires careful attention to system security and LAMP configuration.
+
+
+#week04
+
+Report: Setting Up a Local Development Environment on Ubuntu 20.04
+Introduction
+This report details the process of establishing a local development environment on Ubuntu 20.04 using Apache, MySQL, PHP, HTML, CSS, and JavaScript. The objective is to create a dynamic website capable of interacting with a database.
+Local Development Environment Setup
+    1. Software Requirements:
+        ◦ Apache: Web server to serve the site.
+        ◦ MySQL: Database management system to handle data storage.
+        ◦ PHP: Server-side scripting language for dynamic content.
+        ◦ HTML/CSS/JavaScript: Front-end technologies for building the user interface.
+    2. Installation Steps:
+        ◦ Update Package Manager:
+          sudo apt update
+        ◦ Install Apache:
+          sudo apt install apache2
+            ▪ Check if Apache is running:
+          sudo systemctl status apache2
+        ◦ Install MySQL:
+          sudo apt install mysql-server
+            ▪ Secure MySQL installation:
+          sudo mysql_secure_installation
+        ◦ Install PHP and Required Extensions:
+
+          sudo apt install php libapache2-mod-php php-mysql
+        ◦ Restart Apache to Load PHP:
+          sudo systemctl restart apache2
+    3. Database Setup:
+        ◦ Access MySQL:
+          sudo mysql
+        ◦ Create a Database:
+          CREATE DATABASE my_dynamic_site;
+        ◦ Create Tables:
+          USE site_name;
+          CREATE TABLE users (
+              id INT AUTO_INCREMENT PRIMARY KEY,
+              name VARCHAR(100),
+              email VARCHAR(100)
+          );
+    4. Dynamic Site Development:
+        ◦ Create Project Directory:
+          sudo mkdir /var/www/html/site_name
+        ◦ Set Permissions:
+          sudo chown -R $USER:$USER /var/www/html/site_name
+        ◦ Create PHP Files:
+            ▪ db_connect.php:
+              php
+              Copy code
+              <?php
+              $host = 'localhost';
+              $db_name = 'XXXXXXX';
+              $username = 'XXXXXXXXX'; // or your MySQL username
+              $password = 'XXXXXXX'; // your MySQL password
+              
+              try {
+                  $pdo = new PDO("mysql:host=$host;dbname=$db_name", $username, $password);
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                  echo "Connected successfully";
+              } catch (PDOException $e) {
+                  echo "Connection failed: " . $e->getMessage();
+              }
+              ?>
+            ▪ index.php:
+              
+              <?php include 'db_connect.php'; ?>
+              <!DOCTYPE html>
+              <html lang="en">
+              <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>My Dynamic Site</title>
+                  <link rel="stylesheet" href="style.css">
+              </head>
+              <body>
+                  <h1>Welcome to My Dynamic Site</h1>
+              </body>
+              </html>
+        ◦ Create Style File: Add basic styles in a file named style.css.
+    5. Testing the Site:
+        ◦ Access the site via http://localhost/site_name/index.php in a web browser.
+Demonstration
+    • Site Running in Browser: 
+    • phpMyAdmin Access: To manage the database easily, consider installing phpMyAdmin:
+      sudo apt install phpmyadmin
+      Access it via http://localhost/phpmyadmin.
+      
+Conclusion
+The local development environment is now fully operational, allowing for dynamic web development with PHP and MySQL on Ubuntu 20.04. Future enhancements will include integrating JavaScript for interactivity and exploring deployment options to a production server.
