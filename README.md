@@ -261,3 +261,25 @@ Demonstration
       
 Conclusion
 The local development environment is now fully operational, allowing for dynamic web development with PHP and MySQL on Ubuntu 20.04. Future enhancements will include integrating JavaScript for interactivity and exploring deployment options to a production server.
+
+#week 06
+
+We set up and managed our CMS Team 2 project across four key platforms: GitHub, Trello, LinkedIn, and Slack.
+
+GitHub:
+Created a project repository for version control and code collaboration.
+Key takeaway: Essential for distributed coding, but required some learning for team members on version control and pull requests.
+
+Trello:
+Used Trello to track tasks with columns like Backlog, To-Do, In Progress, and Completed.
+Key takeaway: Great for visual task management, but needed regular updates to stay organized.
+
+LinkedIn:
+Connected team members professionally and shared project updates.
+Key takeaway: While not central to project work, LinkedIn helped strengthen professional ties.
+
+Slack:
+Created dedicated channels for team communication, including integration with GitHub and Trello for real-time updates.
+Key takeaway: Slack was crucial for quick communication and team collaboration.
+
+In summary, these tools helped streamline collaboration, task management, and communication, but required some initial setup and discipline for effective use.
