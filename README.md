@@ -262,6 +262,35 @@ Demonstration
 Conclusion
 The local development environment is now fully operational, allowing for dynamic web development with PHP and MySQL on Ubuntu 20.04. Future enhancements will include integrating JavaScript for interactivity and exploring deployment options to a production server.
 
+#week05
+
+Created the Child Theme Folder:
+I created a folder named twenty-twenty-one-child inside the wp-content/themes/ directory.
+
+Customizing style.css:
+I added custom CSS for:
+
+Changing the header background color.
+Modifying the body font.
+Altering the link hover color.
+Increasing padding in the main content.
+Resizing the site logo.
+Customizing the footer background and text.
+Enqueued Styles in functions.php:
+I wrote a functions.php file to properly enqueue both the parent and child theme stylesheets, ensuring that the child theme's custom styles were applied.
+
+Activating the Child Theme:
+After creating the necessary files, I activated the child theme through the WordPress dashboard.
+
+Outcome:
+The child theme was successfully created and activated with all customizations applied as intended. The site reflected the changes immediately, and the customizations were preserved even after activating the child theme.
+
+Insight:
+Using child themes is a powerful way to maintain customizations safely in WordPress. They allow for modifications without altering the core files of the parent theme, which is crucial for updating the site without losing changes. I now understand how to structure and use child themes effectively in WordPress development.
+
+Conclusion:
+This exercise reinforced the importance of using child themes to safely manage customizations in WordPress, ensuring that future updates to the parent theme won't overwrite them.
+
 #week 06
 
 We set up and managed our CMS Team 2 project across four key platforms: GitHub, Trello, LinkedIn, and Slack.
